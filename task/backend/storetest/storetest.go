@@ -8,9 +8,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/platform"
-	"github.com/influxdata/platform/snowflake"
-	"github.com/influxdata/platform/task/backend"
+	platform "github.com/influxdata/influxdb"
+	"github.com/influxdata/influxdb/snowflake"
+	"github.com/influxdata/influxdb/task/backend"
 )
 
 var idGen = snowflake.NewIDGenerator()
@@ -351,7 +351,7 @@ from(bucket:"test") |> range(start:-1h)`
 
 	t.Run("multiple, large pages", func(t *testing.T) {
 		if os.Getenv("JENKINS_URL") != "" {
-			t.Skip("Skipping test that parses a lot of Flux on Jenkins. Unskip when https://github.com/influxdata/platform/issues/484 is fixed.")
+			t.Skip("Skipping test that parses a lot of Flux on Jenkins. Unskip when https://github.com/influxdata/influxdb/issues/484 is fixed.")
 		}
 		if testing.Short() {
 			t.Skip("Skipping test in short mode.")

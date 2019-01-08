@@ -6,15 +6,15 @@ import (
 	"testing"
 
 	bolt "github.com/coreos/bbolt"
-	_ "github.com/influxdata/platform/query/builtin"
-	"github.com/influxdata/platform/task/backend"
-	boltstore "github.com/influxdata/platform/task/backend/bolt"
-	"github.com/influxdata/platform/task/backend/storetest"
-	"github.com/influxdata/platform/task/options"
+	_ "github.com/influxdata/influxdb/query/builtin"
+	"github.com/influxdata/influxdb/task/backend"
+	boltstore "github.com/influxdata/influxdb/task/backend/bolt"
+	"github.com/influxdata/influxdb/task/backend/storetest"
+	"github.com/influxdata/influxdb/task/options"
 )
 
 func init() {
-	// TODO(mr): remove as part of https://github.com/influxdata/platform/issues/484.
+	// TODO(mr): remove as part of https://github.com/influxdata/influxdb/issues/484.
 	options.EnableScriptCacheForTest()
 }
 

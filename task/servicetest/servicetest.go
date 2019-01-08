@@ -15,15 +15,15 @@ import (
 	"time"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/influxdata/platform"
-	"github.com/influxdata/platform/snowflake"
-	"github.com/influxdata/platform/task"
-	"github.com/influxdata/platform/task/backend"
-	"github.com/influxdata/platform/task/options"
+	platform "github.com/influxdata/influxdb"
+	"github.com/influxdata/influxdb/snowflake"
+	"github.com/influxdata/influxdb/task"
+	"github.com/influxdata/influxdb/task/backend"
+	"github.com/influxdata/influxdb/task/options"
 )
 
 func init() {
-	// TODO(mr): remove as part of https://github.com/influxdata/platform/issues/484.
+	// TODO(mr): remove as part of https://github.com/influxdata/influxdb/issues/484.
 	options.EnableScriptCacheForTest()
 }
 

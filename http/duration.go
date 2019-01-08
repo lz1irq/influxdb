@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/influxdata/platform/kit/errors"
+	"github.com/influxdata/influxdb/kit/errors"
 )
 
 // ErrInvalidDuration is returned when parsing a malformatted duration.
@@ -86,7 +86,7 @@ func ParseDuration(s string) (time.Duration, error) {
 					continue
 				case 'o': // mo == month
 					// TODO(goller): use real duration values:
-					// https://github.com/influxdata/platform/issues/657
+					// https://github.com/influxdata/influxdb/issues/657
 					unit = string(a[i : i+2])
 					d += time.Duration(n) * 30 * 24 * time.Hour
 					i += 2
@@ -102,11 +102,11 @@ func ParseDuration(s string) (time.Duration, error) {
 			d += time.Duration(n) * 24 * time.Hour
 		case 'w':
 			// TODO(goller): use real duration values:
-			// https://github.com/influxdata/platform/issues/657
+			// https://github.com/influxdata/influxdb/issues/657
 			d += time.Duration(n) * 7 * 24 * time.Hour
 		case 'y':
 			// TODO(goller): use real duration values:
-			// https://github.com/influxdata/platform/issues/657
+			// https://github.com/influxdata/influxdb/issues/657
 			d += time.Duration(n) * 365 * 24 * time.Hour
 		default:
 			return 0, ErrInvalidDuration

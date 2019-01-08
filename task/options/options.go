@@ -13,12 +13,12 @@ import (
 	cron "gopkg.in/robfig/cron.v2"
 )
 
-// optionCache is enabled for tests, to work around https://github.com/influxdata/platform/issues/484.
+// optionCache is enabled for tests, to work around https://github.com/influxdata/influxdb/issues/484.
 var optionCache map[string]Options
 
 var optionCacheMu sync.Mutex
 
-// EnableScriptCacheForTest is used as a workaround for https://github.com/influxdata/platform/issues/484,
+// EnableScriptCacheForTest is used as a workaround for https://github.com/influxdata/influxdb/issues/484,
 // and should be removed after that issue is addressed.
 // Do not call this method in production code, as it will leak memory.
 func EnableScriptCacheForTest() {

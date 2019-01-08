@@ -3,7 +3,7 @@ package inmem
 import (
 	"context"
 
-	"github.com/influxdata/platform"
+	platform "github.com/influxdata/influxdb"
 )
 
 var _ platform.LookupService = (*Service)(nil)
@@ -21,7 +21,7 @@ func (s *Service) Name(ctx context.Context, resource platform.Resource, id platf
 	switch resource {
 	case platform.TasksResource: // 5 // TODO(goller): unify task bolt storage here so we can lookup names
 	case platform.AuthorizationsResource: // 0 TODO(goller): authorizations should also have optional names
-	case platform.SourcesResource: // 4 TODO(goller): no inmen version of sources service: https://github.com/influxdata/platform/issues/2145
+	case platform.SourcesResource: // 4 TODO(goller): no inmen version of sources service: https://github.com/influxdata/influxdb/issues/2145
 	case platform.BucketsResource: // 1
 		r, err := s.FindBucketByID(ctx, id)
 		if err != nil {
